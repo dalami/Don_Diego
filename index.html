@@ -6,7 +6,6 @@
     <title>Don Diego | Bondiola & Osobuco Sous Vide</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css.css">
-    
 </head>
 <body>
 
@@ -15,28 +14,30 @@
         <h1>DON DIEGO</h1>
         <p class="tagline">BONDIOLA & OSOBUCO SOUS VIDE</p>
     </header>
-<section style="background: white; padding: 40px 20px; text-align: center;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-family: 'Oswald'; color: var(--negro-carbon);">COCINA AL VACÍO</h2>
-        <p style="font-size: 1.1rem; color: #666;">
-            El sistema <strong>Sous Vide</strong> consiste en cocinar alimentos <strong>envasados al vacío</strong> a temperaturas bajas y precisas. 
-        </p>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px;">
-            <div>
-                <span style="font-size: 2rem;">🛡️</span>
-                <p><strong>100% Seguro</strong><br><small>Sin contacto con el aire</small></p>
-            </div>
-            <div>
-                <span style="font-size: 2rem;">💧</span>
-                <p><strong>Máxima Jugosidad</strong><br><small>No pierde sus jugos</small></p>
-            </div>
-            <div>
-                <span style="font-size: 2rem;">⏱️</span>
-                <p><strong>Listo en minutos</strong><br><small>Solo calentar y servir</small></p>
+
+    <section style="background: white; padding: 40px 20px; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: 'Oswald'; color: var(--negro-carbon);">COCINA AL VACÍO</h2>
+            <p style="font-size: 1.1rem; color: #666;">
+                El sistema <strong>Sous Vide</strong> consiste en cocinar alimentos <strong>envasados al vacío</strong> a temperaturas bajas y precisas. 
+            </p>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px;">
+                <div>
+                    <span style="font-size: 2rem;">🛡️</span>
+                    <p><strong>100% Seguro</strong><br><small>Sin contacto con el aire</small></p>
+                </div>
+                <div>
+                    <span style="font-size: 2rem;">💧</span>
+                    <p><strong>Máxima Jugosidad</strong><br><small>No pierde sus jugos</small></p>
+                </div>
+                <div>
+                    <span style="font-size: 2rem;">⏱️</span>
+                    <p><strong>Listo en minutos</strong><br><small>Solo calentar y servir</small></p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <main>
         <section class="menu-grid">
             <div class="card">
@@ -67,72 +68,97 @@
     <div id="modal-container" class="modal-overlay">
         <span class="close-btn" onclick="closeModal()">&times;</span>
         <div class="modal-content">
-            <div id="modal-body">
-                </div>
+            <div id="modal-body"></div>
         </div>
     </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 style="font-family: 'Oswald'">DON DIEGO</h3>
+                <p>Bondiola & Osobuco Sous Vide</p>
+                <p>📍 Pinamar, Argentina</p>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACTO</h4>
+                <p>📞 <a href="tel:2254414211" style="color:white; text-decoration:none;">2254 41-4211</a></p>
+                <p>📸 <a href="https://instagram.com/dondiegopinamar" target="_blank" style="color:white; text-decoration:none;">@dondiegopinamar</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Don Diego - Excelencia al Vacío
+        </div>
+    </footer>
+
+    <a href="https://wa.me/542254414211?text=Hola!%20Quiero%20consultar%20por%20los%20productos%20de%20Don%20Diego" 
+       class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
     <script>
         const productos = {
             bondiola: {
-                titulo: "BONDIOLA DESMECHADA",
-                descripcion: "Nuestra bondiola se marina por 24 horas antes de la cocción lenta.",
-                detalles: "Perfecta para sandwiches,tacos,arroz,pastas. La grasa intramuscular se convierte en colágeno puro.",
-                pasos: "Colocar directo del freezer en una olla con agua caliente (85°), hasta que este descongelado."
+                titulo: "BONDIOLA DESMECHADA DON DIEGO",
+                descripcion: "Nuestra pieza estrella marinada por 24 horas antes de la cocción.",
+                proceso: "Cocción de 20 horas a 75°C. La grasa intramuscular se convierte en colágeno puro, logrando una carne que se deshace sola.",
+                detalle: "Perfecta para sandwiches, tacos, arroz o pastas.",
+                servicio: "Ideal con pan brioche.",
+                regeneracion: "Directo del freezer: Olla con agua caliente (85°C) hasta descongelar, (20 minutos aprox.)."
             },
             osobuco: {
-                titulo: "OSOBUCO PREMIUM",
-                descripcion: "Corte con hueso cocinado en su propio jugo con reducción de Malbec.",
-                detalles: "Textura mantequilla. Se recomienda acompañar con puré cremoso o risotto.",
-                pasos: "Colocar directo del freezer en una olla con agua caliente (85°), hasta que este descongelado."
+                titulo: "OSOBUCO PREMIUM AL MALBEC",
+                descripcion: "Corte con hueso braseado en su propio jugo con reducción de Malbec.",
+                proceso: "24 horas a 74°C. Logramos una textura de mantequilla y un sabor profundo y elegante.",
+                detalle: "Sabor intenso donde el vino se reduce a una glasa natural.",
+                servicio: "Recomendado con risotto de hongos o puré cremoso.",
+                regeneracion: "Directo del freezer: Olla con agua caliente (85°C)hasta descongelar (25 minutos aprox). Es vital recuperar toda la salsa de la bolsa."
             }
         };
 
         function openModal(id) {
             const p = productos[id];
             const body = document.getElementById('modal-body');
+            
             body.innerHTML = `
-                <h2 style="font-family:'Oswald'; color:var(--bordo)">${p.titulo}</h2>
-                <p>${p.descripcion}</p>
-                <div class="info-sous-vide">
-                    <strong>💡 Detalle:</strong> ${p.detalles}<br><br>
-                    <strong>🔥 Regeneración:</strong> ${p.pasos}
+                <h2 style="font-family:'Oswald'; color:var(--bordo); border-bottom: 2px solid var(--naranja-fuego); padding-bottom:10px; margin-top:0;">${p.titulo}</h2>
+                <p style="font-style: italic; color: #555; margin-bottom: 20px;">${p.descripcion}</p>
+                <div style="display: grid; gap: 15px; text-align: left;">
+                    <div>
+                        <strong style="color:var(--naranja-fuego); font-size: 0.8rem;">⏳ EL PROCESO</strong>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">${p.proceso}</p>
+                    </div>
+                    <div>
+                        <strong style="color:var(--naranja-fuego); font-size: 0.8rem;">💡 DETALLE</strong>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">${p.detalle}</p>
+                    </div>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; border-left: 4px solid var(--negro-carbon);">
+                        <strong style="color:var(--negro-carbon); font-size: 0.8rem;">🍽️ SUGERENCIA</strong>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">${p.servicio}</p>
+                    </div>
+                    <div style="border: 1px dashed #ccc; padding: 10px; background: #fffcf5;">
+                        <strong style="font-size: 0.75rem; color: #e67e22;">🔥 REGENERACIÓN (Freezer)</strong>
+                        <p style="margin: 5px 0; font-size: 0.85rem;">${p.regeneracion}</p>
+                    </div>
                 </div>
+                <a href="https://wa.me/542254414211?text=Hola!%20Quiero%20encargar%20${p.titulo}" 
+                   target="_blank"
+                   style="display:block; background:#25d366; color:white; text-align:center; padding:15px; margin-top:25px; text-decoration:none; font-weight:bold; border-radius:5px; text-transform: uppercase;">
+                   PEDIR POR WHATSAPP
+                </a>
             `;
             document.getElementById('modal-container').style.display = 'block';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             document.getElementById('modal-container').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
-        window.onclick = function(e) {
-            if (e.target.className === 'modal-overlay') closeModal();
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal-container');
+            if (event.target == modal) closeModal();
         }
     </script>
 </body>
-<footer class="main-footer">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3 style="font-family: 'Oswald'">DON DIEGO</h3>
-            <p>Bondiola & Osobuco Sous Vide</p>
-            <p>📍 Pinamar, Argentina</p>
-        </div>
-        
-        <div class="footer-section">
-            <h4>CONTACTO</h4>
-            <p>📞 <a href="tel:2254414211">2254 41-4211</a></p>
-            <p>📸 <a href="https://instagram.com/dondiegopinamar" target="_blank">@dondiegopinamar</a></p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2026 Don Diego - Excelencia al Vacío
-    </div>
-</footer>
-
-<a href="https://wa.me/542254414211?text=Hola!%20Quiero%20consultar%20por%20los%20productos%20de%20Don%20Diego" 
-   class="whatsapp-float" 
-   target="_blank">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
 </html>
