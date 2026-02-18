@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Diego | Bondiola & Osobuco Sous Vide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="badge-temp">TECNOLOGÍA GASTRONÓMICA</div>
+        <h1>DON DIEGO</h1>
+        <p class="tagline">BONDIOLA & OSOBUCO SOUS VIDE</p>
+    </header>
+<section style="background: white; padding: 40px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-family: 'Oswald'; color: var(--negro-carbon);">COCINA AL VACÍO</h2>
+        <p style="font-size: 1.1rem; color: #666;">
+            El sistema <strong>Sous Vide</strong> consiste en cocinar alimentos <strong>envasados al vacío</strong> a temperaturas bajas y precisas. 
+        </p>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; gap: 20px;">
+            <div>
+                <span style="font-size: 2rem;">🛡️</span>
+                <p><strong>100% Seguro</strong><br><small>Sin contacto con el aire</small></p>
+            </div>
+            <div>
+                <span style="font-size: 2rem;">💧</span>
+                <p><strong>Máxima Jugosidad</strong><br><small>No pierde sus jugos</small></p>
+            </div>
+            <div>
+                <span style="font-size: 2rem;">⏱️</span>
+                <p><strong>Listo en minutos</strong><br><small>Solo calentar y servir</small></p>
+            </div>
+        </div>
+    </div>
+</section>
+    <main>
+        <section class="menu-grid">
+            <div class="card">
+                <div class="badge-temp">75°C | 20 HORAS</div>
+                <h3>Bondiola Desmechada</h3>
+                <p>Textura sedosa con un blend de especias secretas.</p>
+                <button class="btn-detalle" onclick="openModal('bondiola')">VER DETALLES</button>
+            </div>
+
+            <div class="card">
+                <div class="badge-temp">74°C | 24 HORAS</div>
+                <h3>Osobuco Premium</h3>
+                <p>Braseado al vacío en su propio jugo y malbec.</p>
+                <button class="btn-detalle" onclick="openModal('osobuco')">VER DETALLES</button>
+            </div>
+        </section>
+
+        <section class="metodo">
+            <h2>La Ciencia del Sabor</h2>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.8; line-height: 1.8;">
+                Cocinamos nuestras carnes a temperatura constante durante horas, 
+                garantizando que cada fibra mantenga su jugosidad. 
+                Sin margen de error. Solo perfección.
+            </p>
+        </section>
+    </main>
+
+    <div id="modal-container" class="modal-overlay">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        const productos = {
+            bondiola: {
+                titulo: "BONDIOLA DESMECHADA",
+                descripcion: "Nuestra bondiola se marina por 24 horas antes de la cocción lenta.",
+                detalles: "Perfecta para sandwiches,tacos,arroz,pastas. La grasa intramuscular se convierte en colágeno puro.",
+                pasos: "Colocar directo del freezer en una olla con agua caliente (85°), hasta que este descongelado."
+            },
+            osobuco: {
+                titulo: "OSOBUCO PREMIUM",
+                descripcion: "Corte con hueso cocinado en su propio jugo con reducción de Malbec.",
+                detalles: "Textura mantequilla. Se recomienda acompañar con puré cremoso o risotto.",
+                pasos: "Colocar directo del freezer en una olla con agua caliente (85°), hasta que este descongelado."
+            }
+        };
+
+        function openModal(id) {
+            const p = productos[id];
+            const body = document.getElementById('modal-body');
+            body.innerHTML = `
+                <h2 style="font-family:'Oswald'; color:var(--bordo)">${p.titulo}</h2>
+                <p>${p.descripcion}</p>
+                <div class="info-sous-vide">
+                    <strong>💡 Detalle:</strong> ${p.detalles}<br><br>
+                    <strong>🔥 Regeneración:</strong> ${p.pasos}
+                </div>
+            `;
+            document.getElementById('modal-container').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal-container').style.display = 'none';
+        }
+
+        window.onclick = function(e) {
+            if (e.target.className === 'modal-overlay') closeModal();
+        }
+    </script>
+</body>
+</html>
