@@ -42,22 +42,24 @@
         }
 
         .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: -60px auto 60px;
-            padding: 0 20px;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aumenté un poco el mínimo */
+    gap: 40px; /* Más espacio entre tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
 
-        .card {
-            background: white;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-radius: 12px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+.card {
+    background: white;
+    padding: 40px 30px; /* Más aire interno */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra más suave y moderna */
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee; /* Un borde sutil para definirla mejor */
+}
 
         .card:hover { transform: translateY(-10px); }
 
