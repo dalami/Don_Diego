@@ -256,3 +256,54 @@ main {
     color: var(--bordo) !important;
     transform: scale(1.05);
 }
+
+
+        /* Estilos del Carrusel Dinámico en el Modal */
+        .carrusel-detalle {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 15px 0;
+            background: #eee;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .carrusel-track {
+            display: flex;
+            width: 300%; /* Tres imágenes */
+            animation: slide-fotos 12s infinite ease-in-out;
+        }
+
+        .foto-slide {
+            width: 100%;
+            position: relative;
+        }
+
+        .foto-slide img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .foto-label {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 100%;
+            padding: 8px;
+            font-size: 0.7rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes slide-fotos {
+            0%, 28% { transform: translateX(0%); }
+            33%, 61% { transform: translateX(-33.33%); }
+            66%, 94% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0%); }
+        }
+    

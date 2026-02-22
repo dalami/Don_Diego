@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Oswald:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css.css">
+
 </head>
 
 <body>
@@ -155,6 +156,11 @@
                 titulo: "BONDIOLA DESMECHADA",
                 precio: "$15.000",
                 presentacion: "300gr",
+                imagenes: [
+                    { url: "./images/bondiola_coccion.png", label: "Cocción Sous Vide 20hs" },
+                    { url: "images/bondiola_envasada.png", label: "Envasado con faja Don Diego" },
+                    { url: "images/bondiola_servida.png", label: "Textura desmechada perfecta" }
+                ],
                 descripcion: "Nuestra pieza estrella. Seleccionamos las mejores bondiolas para un proceso de transformación de 48 horas.",
                 proceso: "Marinado en seco (24h) y cocción lenta a 75°C (20h). El colágeno se funde logrando una carne que se deshace sola.",
                 detalle: "Ideal para sandwiches gourmet, tacos o para elevar tus pastas.",
@@ -165,6 +171,11 @@
                 titulo: "OSOBUCO PREMIUM AL MALBEC",
                 precio: "$15.000",
                 presentacion: "Doble Rodaja",
+                imagenes: [
+                    { url: "images/osobuco_coccion.png", label: "Precisión técnica 74°C" },
+                    { url: "images/osobuco_envasado.png", label: "Presentación al vacío" },
+                    { url: "images/osobuco_cocido.png", label: "Resultado: Terneza extrema" }
+                ],
                 descripcion: "Un corte tradicional llevado a la máxima expresión de la cocina técnica.",
                 proceso: "Braseado al vacío durante 24 horas a 74°C. La carne se vuelve increíblemente tierna y untuosa.",
                 detalle: "Acompañado de una reducción melosa de sus propios jugos y vino tinto.",
@@ -177,36 +188,51 @@
             const p = productos[id];
             const body = document.getElementById('modal-body');
 
+            // Generar los slides dinámicamente
+            const slidesHTML = p.imagenes.map(img => `
+                <div class="foto-slide">
+                    <img src="${img.url}" alt="${img.label}">
+                    <div class="foto-label">${img.label}</div>
+                </div>
+            `).join('');
+
             body.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--naranja-fuego); margin-bottom: 10px; padding-bottom: 5px;">
-            <h2 style="font-family:'Oswald'; color:var(--bordo); margin:0; font-size: 1.8rem;">${p.titulo}</h2>
-            <span style="font-family:'Oswald'; font-size: 1.6rem; color: var(--negro-carbon); font-weight: bold;">${p.precio}</span>
-        </div>
-        <p style="font-size: 0.9rem; font-weight: bold; color: var(--naranja-fuego); margin-bottom: 20px; text-transform: uppercase;">
-            📦 ${p.presentacion}
-        </p>
-        
-        <div style="display: grid; gap: 15px; text-align: left;">
-            <div>
-                <strong style="font-size: 0.75rem; letter-spacing: 1px; color: #888;">EL PROCESO</strong>
-                <p style="margin: 5px 0; font-size: 0.95rem;">${p.proceso}</p>
-            </div>
-            <div>
-                <strong style="font-size: 0.75rem; letter-spacing: 1px; color: #888;">RECOMENDACIÓN</strong>
-                <p style="margin: 5px 0; font-size: 0.95rem;">${p.detalle} ${p.servicio}</p>
-            </div>
-            <div style="background: #fdf2e9; padding: 12px; border-radius: 6px; border-left: 3px solid var(--naranja-fuego);">
-                <strong style="font-size: 0.75rem; color: var(--naranja-fuego);">⚡ DEL FREEZER A LA MESA</strong>
-                <p style="margin: 5px 0; font-size: 0.9rem; font-style: italic;">${p.regeneracion}</p>
-            </div>
-        </div>
-        
-        <a href="https://wa.me/542254414211?text=Hola!%20Quiero%20pedir%20${p.titulo}" 
-           target="_blank"
-           style="display:block; background:#25d366; color:white; text-align:center; padding:15px; margin-top:25px; text-decoration:none; font-weight:bold; border-radius:5px; text-transform: uppercase; font-size: 0.9rem;">
-           RESERVAR POR WHATSAPP
-        </a>
-    `;
+                <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid var(--naranja-fuego); padding-bottom: 5px;">
+                    <h2 style="font-family:'Oswald'; color:var(--bordo); margin:0; font-size: 1.8rem;">${p.titulo}</h2>
+                    <span style="font-family:'Oswald'; font-size: 1.6rem; color: var(--negro-carbon); font-weight: bold;">${p.precio}</span>
+                </div>
+
+                <div class="carrusel-detalle">
+                    <div class="carrusel-track">
+                        ${slidesHTML}
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.9rem; font-weight: bold; color: var(--naranja-fuego); margin-bottom: 20px; text-transform: uppercase;">
+                    📦 ${p.presentacion}
+                </p>
+                
+                <div style="display: grid; gap: 15px; text-align: left;">
+                    <div>
+                        <strong style="font-size: 0.75rem; letter-spacing: 1px; color: #888;">EL PROCESO</strong>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">${p.proceso}</p>
+                    </div>
+                    <div>
+                        <strong style="font-size: 0.75rem; letter-spacing: 1px; color: #888;">RECOMENDACIÓN</strong>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">${p.detalle} ${p.servicio}</p>
+                    </div>
+                    <div style="background: #fdf2e9; padding: 12px; border-radius: 6px; border-left: 3px solid var(--naranja-fuego);">
+                        <strong style="font-size: 0.75rem; color: var(--naranja-fuego);">⚡ DEL FREEZER A LA MESA</strong>
+                        <p style="margin: 5px 0; font-size: 0.9rem; font-style: italic;">${p.regeneracion}</p>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/542254414211?text=Hola!%20Quiero%20pedir%20${p.titulo}" 
+                   target="_blank"
+                   style="display:block; background:#25d366; color:white; text-align:center; padding:15px; margin-top:25px; text-decoration:none; font-weight:bold; border-radius:5px; text-transform: uppercase; font-size: 0.9rem;">
+                   RESERVAR POR WHATSAPP
+                </a>
+            `;
 
             document.getElementById('modal-container').style.display = 'block';
             document.body.style.overflow = 'hidden';
