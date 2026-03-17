@@ -61,6 +61,20 @@ const productos = {
     regeneracion:
       "Sumergir la bolsa (cerrada) en agua caliente a 85°C hasta descongelar.",
   },
+  goulash: {
+        titulo: "GOULASH GOURMET",
+        precio: "$15000",
+        presentacion: "400gr",
+        imagenes: [
+          { url: "images/goulash_coccion.png", label: "Cocción Sous Vide 20hs" },
+          { url: "images/goulash_envasado.png", label: "Pack al vacío individual" },
+          { url: "images/goulash_plato.png", label: "Resultado: Carne ultra tierna" },
+        ],
+        proceso: "Dados de ternera premium braseados al vacío durante 20 horas a 74°C con pimentón y una reducción de vegetales.",
+        detalle: "Un guiso húngaro clásico con una vuelta de tuerca técnica. Sabores intensos y carne que se deshace.",
+        servicio: "Ideal para acompañar con Spätzle (ñoquis húngaros), arroz blanco o un puré rústico.",
+        regeneracion: "Sumergir la bolsa (cerrada) en agua caliente a 85°C por 15-20 minutos.",
+      },
 };
 
 // ── DATOS COLECCIONES ────────────────────────────────────────────────
@@ -356,3 +370,28 @@ new IntersectionObserver(
   ([e]) => waFloat.classList.toggle("wa-hidden", e.isIntersecting),
   { threshold: 0.1 },
 ).observe(footer);
+
+// --- CONTADOR DE VISITAS PRIVADO ---
+const cuentaVisitas = async () => {
+    const namespace = "dondiego-pinamar"; // Un nombre único para tu web
+    const key = "home"; // La clave de la página
+    
+    try {
+        // Esta API suma 1 cada vez que alguien entra
+        const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`);
+        const data = await response.json();
+        const totalVisitas = data.value;
+
+        // ESCUCHA SECRETA: Si presionás la tecla "v", te muestra el número
+        window.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'v') {
+                alert(`Don Diego - Total de visitas acumuladas: ${totalVisitas}`);
+            }
+        });
+    } catch (error) {
+        console.log("Error al contar visitas");
+    }
+};
+
+// Ejecutar al cargar la página
+cuentaVisitas();
