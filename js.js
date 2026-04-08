@@ -2,7 +2,7 @@
 const productos = {
   bondiola: {
     titulo: "BONDIOLA DESMECHADA",
-    precio: "$15.000",
+    precio: "$18.000",
     presentacion: "300gr",
     imagenes: [
       { url: "images/bondiola_coccion.png", label: "Cocción Sous Vide 20hs" },
@@ -25,7 +25,7 @@ const productos = {
   },
   osobuco: {
     titulo: "OSOBUCO PREMIUM AL MALBEC",
-    precio: "$15.000",
+    precio: "$18.000",
     presentacion: "Doble Rodaja",
     imagenes: [
       { url: "images/osobuco_coccion.png", label: "Precisión técnica 74°C" },
@@ -43,7 +43,7 @@ const productos = {
   },
   lentejas: {
     titulo: "LENTEJAS GOURMET",
-    precio: "$12.000",
+    precio: "$15.000",
     presentacion: "400gr",
     imagenes: [
       { url: "images/lentejas_coccion.png", label: "Estofado lento artesanal" },
@@ -63,7 +63,7 @@ const productos = {
   },
   goulash: {
         titulo: "GOULASH GOURMET",
-        precio: "$15000",
+        precio: "$18000",
         presentacion: "400gr",
         imagenes: [
           { url: "images/goulash_coccion.png", label: "Cocción Sous Vide 20hs" },
@@ -395,3 +395,4 @@ const cuentaVisitas = async () => {
 
 // Ejecutar al cargar la página
 cuentaVisitas();
+
